@@ -28,6 +28,11 @@ public class StreamStudyTest {
     }
 
     @Test
+    public void printTop3() {
+        StreamStudy.printLongestWordTop3();
+    }
+
+    @Test
     public void map() throws Exception {
         List<Integer> doubleNumbers = StreamStudy.doubleNumbers(numbers);
         doubleNumbers.forEach(System.out::println);
