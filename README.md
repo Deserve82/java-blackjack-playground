@@ -1,26 +1,13 @@
-## [NEXTSTEP 플레이그라운드의 미션 진행 과정](https://github.com/next-step/nextstep-docs/blob/master/playground/README.md)
+TODO LIST
 
----
-## 학습 효과를 높이기 위해 추천하는 미션 진행 방법
-
----
-1. 피드백 강의 전까지 미션 진행 
-> 피드백 강의 전까지 혼자 힘으로 미션 진행. 미션을 진행하면서 하나의 작업이 끝날 때 마다 add, commit
-> 예를 들어 다음 숫자 야구 게임의 경우 0, 1, 2단계까지 구현을 완료한 후 push
-
-![mission baseball](https://raw.githubusercontent.com/next-step/nextstep-docs/master/playground/images/mission_baseball.png)
-
----
-2. 피드백 앞 단계까지 미션 구현을 완료한 후 피드백 강의를 학습한다.
-
----
-3. Git 브랜치를 master 또는 main으로 변경한 후 피드백을 반영하기 위한 새로운 브랜치를 생성한 후 처음부터 다시 미션 구현을 도전한다.
-
-```
-git branch -a // 모든 로컬 브랜치 확인
-git checkout master // 기본 브랜치가 master인 경우
-git checkout main // 기본 브랜치가 main인 경우
-
-git checkout -b 브랜치이름
-ex) git checkout -b apply-feedback
-```
+- [ ] 베팅 금액을 설정할 수 있음
+  - [ ] 블랙잭에서 승리한다면 배팅금액을 받게 됨
+- [ ] 각 플레이어들은 카드를 할당 받을 수 있음
+  - [ ] 단 추가로 카드를 뽑아 21을 넘는다면 배팅 금액 모두를 잃게 됨
+  - [ ] 에이스만 1 또는 11로 사용할 수 있음 (자동으로 1 또는 11로 더 가까운 것을 찾아야함)
+  - [ ] King, Queen, Jack은 10으로 침
+  - [ ] 처음 두장이 21일경우 바로 승리에 금액의 1.5배를 받음
+- [ ] 딜러가 존재함
+  - [ ] 딜러는 처음 16이하이면 반드시 1장을 추가적으로 받아야함
+  - [ ] 17이상이면 추가로 받을 수 없음
+  - [ ] 21점을 초과한다면 무조건 승리해 배팅 금액을 받음
