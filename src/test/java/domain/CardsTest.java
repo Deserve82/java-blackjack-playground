@@ -1,13 +1,13 @@
 package domain;
 
-import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
+import java.util.Arrays;
+import org.junit.jupiter.api.Test;
+
 class CardsTest {
+
     @Test
     void create() {
         Card clover2 = new Card(CardFace.NONE, CardType.CLOVER, 2);
@@ -39,6 +39,16 @@ class CardsTest {
 
         Cards cards = new Cards(Arrays.asList(ace, heartJack, clover2));
         assertThat(cards.getValueSum()).isEqualTo(13);
+    }
+
+    @Test
+    void addCard() {
+        Card heart10 = new Card(CardFace.NONE, CardType.HEART, 10);
+        Cards cards = new Cards();
+
+        cards.addCard(heart10);
+
+        assertThat(cards.getCardList().get(0)).isEqualTo(heart10);
     }
 
 }

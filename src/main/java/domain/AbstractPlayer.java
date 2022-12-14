@@ -10,6 +10,18 @@ public abstract class AbstractPlayer {
     }
 
     public List<Card> getCards() {
-        return cards;
+        return cards.getCardList();
     }
+
+    public void addCard(Card card) {
+        cards.addCard(card);
+    };
+
+    public boolean isBust(){
+        return cards.getValueSum() > 21;
+    };
+
+    public boolean isBlackJack(){
+        return cards.getValueSum() == 21;
+    };
 }

@@ -29,8 +29,8 @@ public class CardTest {
 
     @Test
     void isNotAce() {
-        Card card = new Card(CardFace.JACK, CardType.HEART, 1);
-        assertThat(card.isAce()).isTrue();
+        Card card = new Card(CardFace.JACK, CardType.HEART);
+        assertThat(card.isAce()).isFalse();
     }
 
     @Test

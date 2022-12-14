@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cards {
@@ -10,6 +11,10 @@ public class Cards {
         this.cardList = cardList;
     }
 
+    public Cards() {
+        this(new ArrayList<>());
+    }
+
     public int getValueSum() {
         if (containAce()) {
             int totalSum = getTotalSum();
@@ -18,8 +23,12 @@ public class Cards {
         return getTotalSum();
     }
 
+    public List<Card> getCardList() {
+        return cardList;
+    }
+
     private boolean containAce() {
-        return cardList.stream().map(Card::isAce).findAny().orElse(false);
+        return cardList.stream().anyMatch(Card::isAce);
     }
 
     private int getTotalSum() {
@@ -32,5 +41,9 @@ public class Cards {
             return sum;
         }
         return aceValue11;
+    }
+
+    public void addCard(Card card) {
+        cardList.add(card);
     }
 }
