@@ -49,8 +49,32 @@ class PlayerTest {
     void isBlackJack() {
         Player a = new Player(Arrays.asList(
                 new Card(CardFace.KING, CardType.CLOVER),
-                new Card(CardFace.NONE, CardType.SPADE, 1)));
+                new Card(CardFace.NONE, CardType.SPADE, 3),
+                new Card(CardFace.NONE, CardType.SPADE, 8)));
 
         assertThat(a.isBlackJack()).isTrue();
+    }
+
+    @Test
+    void increasePossession() {
+        Player a = new Player();
+        a.increasePossession(1000);
+        assertThat(a.getPossession()).isEqualTo(1000);
+    }
+
+    @Test
+    void decreasePossession() {
+        Player a = new Player();
+        a.decreasePossession(1000);
+        assertThat(a.getPossession()).isEqualTo(-1000);
+    }
+
+    @Test
+    void isDoubleBlackJack() {
+        Player a = new Player(Arrays.asList(
+                new Card(CardFace.KING, CardType.CLOVER),
+                new Card(CardFace.NONE, CardType.SPADE, 1)));
+
+        assertThat(a.isDoubleBlackJack()).isTrue();
     }
 }

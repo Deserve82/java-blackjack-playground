@@ -13,4 +13,7 @@ public class Player extends AbstractPlayer {
         super(new ArrayList<>());
     }
 
+    public boolean isDoubleBlackJack() {
+        return getCards().size() == 2 && isBlackJack();
+    }
 }

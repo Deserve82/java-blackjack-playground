@@ -27,6 +27,10 @@ public class Cards {
         return cardList;
     }
 
+    public int size() {
+        return cardList.size();
+    }
+
     private boolean containAce() {
         return cardList.stream().anyMatch(Card::isAce);
     }
