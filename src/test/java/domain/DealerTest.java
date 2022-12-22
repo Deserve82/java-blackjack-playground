@@ -2,11 +2,11 @@ package domain;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class DealerTest {
 
@@ -24,16 +24,21 @@ class DealerTest {
             new Card(CardFace.NONE, CardType.SPADE, 1));
 
     @Test
-    void create() {
-        assertDoesNotThrow(Dealer::new);
-    }
-
-    @Test
     void checkPlayer() {
-        Player a = new Player(cards20);
-        Player b = new Player(cards21);
+        Player player19 = new Player(cards19);
+        Player player21 = new Player(cards21);
 
-        List<Player> playerList = Arrays.asList(a, b);
+        HashMap<Player, Money> playerList = new HashMap<Player, Money>() {
+            {
+                put(player19, new Money(100));
+                put(player21, new Money(200));
+            }
+        };
+        Dealer dealer = new Dealer(cards20, playerList);
 
+        dealer.checkPlayers();
+
+        assertThat(player19.getPossession()).isEqualTo(-100);
+        assertThat(player21.getPossession()).isEqualTo(300);
     }
 }

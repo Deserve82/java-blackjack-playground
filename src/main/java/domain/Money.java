@@ -50,4 +50,8 @@ public class Money {
     public boolean isSmaller(Money money) {
         return this.value < money.value;
     }
+
+    public Money multiplied(double v) {
+        return new Money((int) (value * v));
+    }
 }

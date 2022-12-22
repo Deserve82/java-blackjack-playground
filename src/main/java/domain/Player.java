@@ -5,15 +5,26 @@ import java.util.List;
 
 public class Player extends AbstractPlayer {
 
-    public Player(List<Card> cardList) {
+    private final String name;
+
+    public Player(List<Card> cardList, String name) {
         super(cardList);
+        this.name = name;
+    }
+
+    public Player(List<Card> cardList) {
+        this(cardList, "");
     }
 
     public Player() {
-        super(new ArrayList<>());
+        this(new ArrayList<>(), "");
     }
 
     public boolean isDoubleBlackJack() {
         return getCards().size() == 2 && isBlackJack();
+    }
+
+    public String getName() {
+        return name;
     }
 }

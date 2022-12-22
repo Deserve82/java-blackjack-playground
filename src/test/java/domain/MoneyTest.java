@@ -44,4 +44,11 @@ class MoneyTest {
         Money smaller = new Money(10);
         assertThat(smaller.isSmaller(a)).isTrue();
     }
+
+    @Test
+    void getMultipleValue() {
+        Money a = new Money(100);
+        Money multiplied = a.multiplied(1.5);
+        assertThat(multiplied).isEqualTo(new Money(150));
+    }
 }
