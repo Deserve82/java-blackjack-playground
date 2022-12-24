@@ -42,4 +42,12 @@ public abstract class AbstractPlayer {
     public int getPossession() {
         return money.getMoney();
     }
+
+    public boolean isBigger(AbstractPlayer counterpart){
+        return this.cards.getValueSum() > counterpart.cards.getValueSum();
+    }
+
+    public boolean isSame(AbstractPlayer counterpart) {
+        return this.cards.getValueSum() == counterpart.cards.getValueSum();
+    };
 }

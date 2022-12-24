@@ -77,4 +77,34 @@ class PlayerTest {
 
         assertThat(a.isDoubleBlackJack()).isTrue();
     }
+
+    @Test
+    void isBigger() {
+        Player a = new Player(Arrays.asList(
+                new Card(CardFace.NONE, CardType.SPADE, 1),
+                new Card(CardFace.KING, CardType.SPADE)
+        ));
+
+        Player b = new Player(Arrays.asList(
+                new Card(CardFace.NONE, CardType.HEART, 1),
+                new Card(CardFace.KING, CardType.HEART)
+        ));
+
+        assertThat(a.isBigger(b)).isTrue();
+    }
+
+    @Test
+    void isSame() {
+        Player a = new Player(Arrays.asList(
+                new Card(CardFace.NONE, CardType.CLOVER, 1),
+                new Card(CardFace.KING, CardType.CLOVER)
+        ));
+
+        Player b = new Player(Arrays.asList(
+                new Card(CardFace.NONE, CardType.HEART, 1),
+                new Card(CardFace.KING, CardType.HEART)
+        ));
+
+        assertThat(a.isSame(b)).isTrue();
+    }
 }

@@ -40,5 +40,6 @@ class DealerTest {
 
         assertThat(player19.getPossession()).isEqualTo(-100);
         assertThat(player21.getPossession()).isEqualTo(300);
+        assertThat(dealer.getPossession()).isEqualTo(-200);
     }
 }

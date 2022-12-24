@@ -19,6 +19,22 @@ public class Dealer extends AbstractPlayer{
     private void giveOrTakeMoney(Player player, Money betting) {
         if (player.isDoubleBlackJack()) {
             player.increasePossession(betting.multiplied(1.5).getMoney());
+            this.decreasePossession(betting.multiplied(1.5).getMoney());
+            return;
         }
+
+        if (player.isSame(this)) {
+            player.increasePossession(betting.getMoney());
+            return;
+        }
+
+        if (player.isBigger(this)) {
+            player.increasePossession(betting.getMoney());
+            this.decreasePossession(betting.getMoney());
+            return;
+        }
+
+        player.decreasePossession(betting.getMoney());
+        this.increasePossession(betting.getMoney());
     }
 }
