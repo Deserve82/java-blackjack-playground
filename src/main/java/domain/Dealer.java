@@ -37,4 +37,9 @@ public class Dealer extends AbstractPlayer{
         player.decreasePossession(betting.getMoney());
         this.increasePossession(betting.getMoney());
     }
+
+    @Override
+    public String getName() {
+        return "딜러";
+    }
 }

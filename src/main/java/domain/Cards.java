@@ -2,6 +2,7 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Cards {
 
@@ -53,5 +54,10 @@ public class Cards {
 
     public Card pop() {
         return cardList.remove(size() - 1);
+    }
+
+    @Override
+    public String toString() {
+        return cardList.stream().map(Card::toString).collect(Collectors.joining(", "));
     }
 }

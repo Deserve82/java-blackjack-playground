@@ -24,6 +24,7 @@ public class Player extends AbstractPlayer {
         return getCards().size() == 2 && isBlackJack();
     }
 
+    @Override
     public String getName() {
         return name;
     }

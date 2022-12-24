@@ -19,6 +19,10 @@ public abstract class AbstractPlayer {
         return cards.getCardList();
     }
 
+    public int getSumPoints() {
+        return cards.getValueSum();
+    }
+
     public void addCard(Card card) {
         cards.addCard(card);
     }
@@ -49,5 +53,7 @@ public abstract class AbstractPlayer {
 
     public boolean isSame(AbstractPlayer counterpart) {
         return this.cards.getValueSum() == counterpart.cards.getValueSum();
-    };
+    }
+
+    public abstract String getName();
 }
