@@ -51,4 +51,12 @@ class CardsTest {
         assertThat(cards.getCardList().get(0)).isEqualTo(heart10);
     }
 
+    @Test
+    void popCard() {
+        Cards cards = new Cards(Arrays.asList(new Card(CardFace.JACK, CardType.SPADE),
+                new Card(CardFace.NONE, CardType.HEART, 10)));
+        Card card = cards.pop();
+        assertThat(card).isEqualTo(new Card(CardFace.NONE, CardType.HEART, 10));
+    }
+
 }

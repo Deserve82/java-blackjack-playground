@@ -50,4 +50,8 @@ public class Cards {
     public void addCard(Card card) {
         cardList.add(card);
     }
+
+    public Card pop() {
+        return cardList.remove(size() - 1);
+    }
 }
