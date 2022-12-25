@@ -3,7 +3,9 @@ package domain;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 class CardsTest {
@@ -53,8 +55,9 @@ class CardsTest {
 
     @Test
     void popCard() {
-        Cards cards = new Cards(Arrays.asList(new Card(CardFace.JACK, CardType.SPADE),
-                new Card(CardFace.NONE, CardType.HEART, 10)));
+        Cards cards = new Cards(
+                new ArrayList<>(Arrays.asList(new Card(CardFace.JACK, CardType.SPADE),
+                        new Card(CardFace.NONE, CardType.HEART, 10))));
         Card card = cards.pop();
         assertThat(card).isEqualTo(new Card(CardFace.NONE, CardType.HEART, 10));
     }

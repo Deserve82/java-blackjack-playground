@@ -6,10 +6,10 @@ import java.util.stream.Collectors;
 
 public class Cards {
 
-    private final List<Card> cardList;
+    private final ArrayList<Card> cardList;
 
     public Cards(List<Card> cardList) {
-        this.cardList = cardList;
+        this.cardList = new ArrayList<>(cardList);
     }
 
     public Cards() {

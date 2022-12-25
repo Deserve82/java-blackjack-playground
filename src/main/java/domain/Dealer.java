@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Dealer extends AbstractPlayer{
 
-    private HashMap<Player, Money> playersBettingMoney;
+    private final HashMap<Player, Money> playersBettingMoney;
 
     public Dealer(List<Card> dealerCards, HashMap<Player, Money> playersBetting) {
         super(dealerCards);
@@ -18,8 +18,17 @@ public class Dealer extends AbstractPlayer{
 
     private void giveOrTakeMoney(Player player, Money betting) {
         if (player.isDoubleBlackJack()) {
-            player.increasePossession(betting.multiplied(1.5).getMoney());
-            this.decreasePossession(betting.multiplied(1.5).getMoney());
+            changePossession(player, this, betting.multiplied(1.5).getMoney());
+            return;
+        }
+
+        if (this.isBust()) {
+            changePossession(player, this, betting.getMoney());
+            return;
+        }
+
+        if (player.isBust()) {
+            changePossession(this, player, betting.getMoney());
             return;
         }
 
@@ -29,13 +38,16 @@ public class Dealer extends AbstractPlayer{
         }
 
         if (player.isBigger(this)) {
-            player.increasePossession(betting.getMoney());
-            this.decreasePossession(betting.getMoney());
+            changePossession(player, this, betting.getMoney());
             return;
         }
 
-        player.decreasePossession(betting.getMoney());
-        this.increasePossession(betting.getMoney());
+        changePossession(this, player, betting.getMoney());
+    }
+
+    private void changePossession(AbstractPlayer winner, AbstractPlayer loser, int amount) {
+        winner.increasePossession(amount);
+        loser.decreasePossession(amount);
     }
 
     @Override

@@ -11,7 +11,7 @@ public class InputView {
     }
 
     public int getBetting() {
-        return scanner.nextInt();
+        return Integer.parseInt(scanner.nextLine());
     }
 
     public boolean isHit() {

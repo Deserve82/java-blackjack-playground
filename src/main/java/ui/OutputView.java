@@ -2,8 +2,6 @@ package ui;
 
 import domain.AbstractPlayer;
 import domain.Dealer;
-import domain.Deck;
-import domain.Player;
 import java.util.List;
 
 public class OutputView {
@@ -50,12 +48,11 @@ public class OutputView {
         print(name+"는 한장의 카드를 더 받겠습니까?(예는 y, 아니오는 n)");
     }
 
-    public void printResult(List<AbstractPlayer> players) {
+    public void printFinalResult() {
         print("## 최종 수익");
-        players.forEach(this::printMoney);
     }
 
-    private void printMoney(AbstractPlayer player) {
+    public void printMoney(AbstractPlayer player) {
         print(player.getName() + ": " + player.getPossession());
     }
 }
