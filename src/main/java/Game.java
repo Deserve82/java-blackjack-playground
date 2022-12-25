@@ -11,9 +11,9 @@ import ui.OutputView;
 
 public class Game {
 
-    private static Deck deck = new Deck();
-    private static InputView inputView = new InputView();
-    private static OutputView outputView = new OutputView();
+    private static final Deck deck = new Deck();
+    private static final InputView inputView = new InputView();
+    private static final OutputView outputView = new OutputView();
 
     public static void main(String[] args) {
         outputView.printTypeNames();
@@ -39,7 +39,7 @@ public class Game {
         outputView.printPlayerGetTwoCards(Arrays.asList(names));
 
         outputView.printPlayerStatus(dealer);
-        players.forEach(player -> outputView.printPlayerStatus(player));
+        players.forEach(outputView::printPlayerStatus);
 
 
         for (Player player : players) {
@@ -54,11 +54,11 @@ public class Game {
         dealer.checkPlayers();
 
         outputView.printPlayerStatusWithResult(dealer);
-        players.forEach(player -> outputView.printPlayerStatusWithResult(player));
+        players.forEach(outputView::printPlayerStatusWithResult);
 
         outputView.printFinalResult();
         outputView.printMoney(dealer);
-        players.forEach(player -> outputView.printMoney(player));
+        players.forEach(outputView::printMoney);
     }
 
     private static void checkHitOrStand(Player player) {
