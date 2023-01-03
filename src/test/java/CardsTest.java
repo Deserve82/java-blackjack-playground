@@ -18,6 +18,12 @@ class CardsTest {
     }
 
     @Test
+    void isBlackJack() {
+        Cards cards = new Cards(Arrays.asList(new Card(Denomination.ACE, Suit.CLUBS), new Card(Denomination.QUEEN, Suit.HEARTS)));
+        assertThat(cards.isBlackJack()).isTrue();
+    }
+
+    @Test
     void getSumScore() {
         Cards cards = new Cards(Arrays.asList(new Card(Denomination.ACE, Suit.CLUBS), new Card(Denomination.QUEEN, Suit.HEARTS)));
         Cards cards1 = new Cards(Arrays.asList(new Card(Denomination.EIGHT, Suit.CLUBS), new Card(Denomination.QUEEN, Suit.HEARTS)));

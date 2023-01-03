@@ -33,4 +33,13 @@ public class Cards {
     private boolean containsAce() {
         return cardList.stream().map(Card::isAce).findAny().orElse(false);
     }
+
+    public boolean isBlackJack() {
+        return 21 == getSumScore();
+    }
+
+    public int size() {
+        return cardList.size();
+    }
+
 }
