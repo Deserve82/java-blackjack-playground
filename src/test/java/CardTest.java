@@ -1,9 +1,9 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
-import domain.Card;
-import domain.Denomination;
-import domain.Suit;
+import domain.Card.Card;
+import domain.Card.Denomination;
+import domain.Card.Suit;
 import org.junit.jupiter.api.Test;
 
 class CardTest {

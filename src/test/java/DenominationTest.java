@@ -1,6 +1,6 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
-import domain.Denomination;
+import domain.Card.Denomination;
 import org.junit.jupiter.api.Test;
 
 public class DenominationTest {

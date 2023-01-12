@@ -1,4 +1,6 @@
-package domain;
+package domain.State;
+
+import domain.Card.Cards;
 
 public abstract class Running extends Started implements State {
 
@@ -9,14 +11,5 @@ public abstract class Running extends Started implements State {
     @Override
     public boolean isFinished() {
         return false;
-    }
-
-    @Override
-    public double profit(double value) {
-        if (this.cards.isBlackJack() && cards.size() == 2) {
-            return value * 1.5;
-        }
-
-        return value;
     }
 }

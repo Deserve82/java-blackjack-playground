@@ -1,5 +1,6 @@
-package domain;
+package domain.Card;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cards {
@@ -7,7 +8,7 @@ public class Cards {
     private final List<Card> cardList;
 
     public Cards(List<Card> cardList) {
-        this.cardList = cardList;
+        this.cardList = new ArrayList(cardList);
     }
 
     public int getSumScore() {
@@ -42,4 +43,7 @@ public class Cards {
         return cardList.size();
     }
 
+    public void addCard(Card card) {
+        cardList.add(card);
+    }
 }
