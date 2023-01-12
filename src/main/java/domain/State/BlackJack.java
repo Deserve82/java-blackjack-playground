@@ -14,8 +14,12 @@ public class BlackJack extends Finished{
         return 1.5;
     }
 
-    public CompareResult compare(Finished state) {
-        return null;
-    }
+    @Override
+    public CompareResult compare(Finished opponent) {
+        if (opponent instanceof BlackJack) {
+            return CompareResult.DRAW;
+        }
 
+        return CompareResult.WIN;
+    }
 }

@@ -5,7 +5,7 @@ import domain.State.State;
 
 public abstract class AbstractPlayer {
 
-    private final State state;
+    protected final State state;
 
     AbstractPlayer(State state) {
         this.state = state;

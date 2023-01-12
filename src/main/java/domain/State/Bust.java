@@ -14,8 +14,8 @@ public class Bust extends Finished{
         return -1.0;
     }
 
-    public CompareResult compare(Finished state) {
-        return null;
+    @Override
+    public CompareResult compare(Finished opponent) {
+        return CompareResult.LOSE;
     }
-
 }

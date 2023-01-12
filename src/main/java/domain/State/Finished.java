@@ -28,4 +28,6 @@ public abstract class Finished extends Started {
     }
 
     public abstract double earnRate();
+
+    public abstract CompareResult compare(Finished opponent);
 }
