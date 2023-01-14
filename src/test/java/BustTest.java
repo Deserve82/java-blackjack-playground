@@ -41,7 +41,7 @@ class BustTest {
     @Test
     void earnRate() {
         Bust state = new Bust(new Cards(new ArrayList<>()));
-        assertThat(state.earnRate()).isEqualTo(-1.0);
+        assertThat(state.earnRate()).isEqualTo(1.0);
     }
 
     @Test

@@ -5,6 +5,7 @@ import domain.Card.Card;
 import domain.Card.Cards;
 import domain.Card.Denomination;
 import domain.Card.Suit;
+import domain.Player.Money;
 import domain.Player.Player;
 import domain.State.Hit;
 import domain.State.State;
@@ -27,5 +28,15 @@ class PlayerTest {
     void getName() {
         Player player = new Player(hit, "test");
         assertThat(player.getName()).isEqualTo("test");
+    }
+
+    @Test
+    void updatePossession() {
+        Player player = new Player(hit, "test", 0);
+        player.updatePossession(new Money(200));
+        assertThat(player.getPossession()).isEqualTo(200);
+
+        player.updatePossession(new Money(1));
+        assertThat(player.getPossession()).isEqualTo(201);
     }
 }

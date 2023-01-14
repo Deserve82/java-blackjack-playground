@@ -11,7 +11,7 @@ public class Bust extends Finished{
 
     @Override
     public double earnRate() {
-        return -1.0;
+        return 1.0;
     }
 
     @Override
