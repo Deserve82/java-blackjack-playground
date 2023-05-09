@@ -1,8 +1,5 @@
-package domain;
+package domain.Card;
 
-import domain.Card.Card;
-import domain.Card.Denomination;
-import domain.Card.Suit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

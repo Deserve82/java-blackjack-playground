@@ -36,4 +36,8 @@ public class Dealer extends AbstractPlayer{
         this.updatePossessionWithRate(money, dealerRate);
         player.updatePossessionWithRate(money, userRate);
     }
+
+    public boolean isUnder16() {
+        return state.cards().getSumScore() <= 16;
+    }
 }

@@ -82,4 +82,11 @@ class DealerTest {
         assertThat(players.get(0).getPossession()).isEqualTo(100);
     }
 
+    @Test
+    void isUnder16() {
+        Dealer dealer = new Dealer(stay);
+
+        assertThat(dealer.isUnder16()).isFalse();
+    }
+
 }
